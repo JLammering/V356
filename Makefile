@@ -14,8 +14,14 @@ all: build/main.pdf
 build/linregplot.pdf: linregplot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python linregplot.py
 
+build/plotw1.pdf: plotw1.py matplotlibrc header-matplotlib.tex b1.txt | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plotw1.py
+
+build/plotw2.pdf: plotw2.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plotw2.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/linregplot.pdf lit.bib content/ main.tex
+build/main.pdf: build/plotw1.pdf build/plotw2.pdf build/linregplot.pdf lit.bib content/ main.tex
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
