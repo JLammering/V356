@@ -1,4 +1,93 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+\subsection{Kettenschaltungen mit LC-Gliedern}
+
+Kettenschaltungen aus Kondensatoren und Induktivitäten können verschiedene
+Frequenzen einer Wechselstromquelle voneinander separieren.
+Der sogenannte Tiefpass, der in Abbildung x dargestellt ist, zeichnet
+sich dadurch aus, dass er ab einer bestimmten Schwingungsfrequenz die Amplitude
+des Wechselstroms verschwinden lässt.
+Bei dem sogenannten Hochpass, der in Abbildung x abgebildet ist, verschwindet
+die Amplitude, wenn die Schwingungsfrequenz gegen Null geht.
+Dadurch ist es zum Beispiel möglich die unerwünschten Oberwellen eines
+Wechselstromgenerators zu eliminieren, indem ein Tiefpass in die
+Schaltung eingebaut wird.
+Im Folgenden werden spezifische Tiefpässe mit konstanten und
+alternierenden Kapazitäten analysiert.
+
+
+\subsection{Dispersionsrelation einer LC-Kettenschaltung}
+
+Über die Kirchhoffschen Gesetze kann mit Hilfe der in Abbildung x
+dargestellten Ströme und Spannungen die Schwingungsgleichung einer
+LC-Kettenschaltung aufgestellt werden.
+Aus der Knotenregel
+
+\begin{equation}
+  \sum_{n} I_n = 0
+\end{equation}
+
+folgt
+
+\begin{equation}
+  I_n - I_{n+1} - I_{n,\text{quer}} = 0
+\end{equation}
+
+und aus der Maschenregel
+
+\begin{equation}
+  \sum_{n} U_n = 0
+\end{equation}
+
+im eingeschwungenen Zustand
+
+\begin{equation}
+  I_{n} = \frac{U_{n} - U_{n-1}}{\symup{i} \omega L}
+\end{equation}
+
+und
+
+\begin{equation}
+  I_{n,\text{quer}} = U_{n} \symup{i} \omega C.
+\end{equation}
+
+Daraus folgt durch Einsetzen und Umformen die Schwingungsgleichung
+
+\begin{equation}
+  \frac{U_{n} - U_{n-1}}{\symup{i} \omega L} - \frac{U_{n+1} - U_{n}}{\symup{i} \omega L} - \symup{i} U_{n} \omega C = 0,
+\end{equation}
+
+die mit dem Ansatz
+
+\begin{equation}
+  U_{n}(t) = U_0 \symup{e}^{\symup{i}t (\omega - n \theta)}
+\end{equation}
+
+gelöst werden kann.
+Es ergibt sich die Dispersionsrelation
+
+\begin{equation}
+  \omega_k(\theta) = \sqrt{\frac{2}{LC}(1-\cos\theta)},
+\end{equation}
+
+das ist die Kreisfrequenz
+$\omega_k$ in Abhängigkeit von der Phasenverschiebung $\theta$ pro Kettenglied.
+Der maximale Wert für $\omega_k$ ist die Grenzfrequenz $\bar{\omega}$
+mit
+
+\begin{equation}
+  \bar{\omega} = \sqrt{\frac{2}{LC}}.
+\end{equation}
+
+Hochfrequentere Schwingungen werden von dem Tiefpass herausgefiltert.
+
+
+\subsection{Dispersionsrelation einer alternierenden LC-Kettenschaltung}
+
+Mit einer alternierenden LC-Kettenschaltung ist hier ein Tiefpass gemeint,
+bei dem zwei unterschiedliche Kapazitäten $C_1$ und $C_2$ alternierend
+parallel in die Schaltung eingebaut wurden. Dies ist in Abbildung x
+dargestellt.
+
 \cite{sample}
