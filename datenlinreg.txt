@@ -1,4 +1,4 @@
-#Abstand ln(f)
+#Abstand f
 4 30000
 7 35000
 10 44000

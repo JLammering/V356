@@ -20,8 +20,19 @@ build/plotw1.pdf: plotw1.py matplotlibrc header-matplotlib.tex b1.txt | build
 build/plotw2.pdf: plotw2.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plotw2.py
 
+build/plotd_1.pdf: plotd_1.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plotd_1.py
+
+build/plotd_2.pdf: plotd_2.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plotd_2.py
+
+build/plote.pdf: plote.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plote.py
+
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plotw1.pdf build/plotw2.pdf build/linregplot.pdf lit.bib content/ main.tex
+
+build/main.pdf: build/linregplot.pdf lit.bib content/ main.tex build/plotd_1.pdf build/plotd_2.pdf build/plote.pdf build/plotw1.pdf build/plotw2.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
