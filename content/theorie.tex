@@ -21,18 +21,19 @@ Schaltung eingebaut wird.
   \begin{subfigure}{0.48\textwidth}
     \centering
     \includegraphics[height=2.5cm]{Tiefpass.png}
-    \caption{Tiefpass}
+    \caption{Tiefpass.}
     \label{subfig:Tiefpass}
   \end{subfigure}
   \begin{subfigure}{0.48\textwidth}
     \centering
     \includegraphics[height=2.5cm]{Hochpass.png}
-    \caption{Hochpass}
+    \caption{Hochpass.}
     \label{subfig:Hochpass}
   \end{subfigure}
   \caption{verschiedene Kettenschaltungen}
   \label{fig:Ketten}
 \end{figure}
+
 Im Folgenden werden spezifische Tiefpässe mit konstanten und
 alternierenden Kapazitäten analysiert.
 
@@ -46,9 +47,10 @@ einer LC-Kettenschaltung aufgestellt werden.
 \begin{figure}
   \centering
   \includegraphics[height=4cm]{KetteLC.png}
-  \caption{Ströme und Spannungen in einer LC-Kette}
+  \caption{Ströme und Spannungen in einer LC-Kette.}
   \label{fig:KetteLC}
 \end{figure}
+
 Aus der Knotenregel
 
 \begin{equation}
@@ -117,9 +119,10 @@ parallel in die Schaltung eingebaut werden. Dies ist in Abbildung
 \begin{figure}
   \centering
   \includegraphics[height=3cm]{KetteLC1C2.png}
-  \caption{Knotenpunkte in einer alternierenden LC-Kette}
+  \caption{Knotenpunkte in einer alternierenden LC-Kette.}
   \label{fig:KetteLC1C2}
 \end{figure}
+
 Aus den Kirchhoffschen Gesetzen \eqref{eqn:Knoten} und \eqref{eqn:Masche}
 folgen für diese Schaltung zwei Schwingungsgleichungen
 
@@ -179,9 +182,10 @@ dargestellt.
 \begin{figure}
   \centering
   \includegraphics[height=7cm]{KurveLC1C2.png}
-  \caption{Skizze der Graphen von $\omega_1$ und $\omega_2$}
+  \caption{Skizze der Graphen von $\omega_1$ und $\omega_2$.}
   \label{fig:KurveLC1C2}
 \end{figure}
+
 Bei dem unteren Kurvenast $\omega_1$ mit negativem Vorzeichen vor der Wurzel
 in Gleichung \eqref{eqn:Omega}
 steigt die Kreisfrequenz zunächst annähernd konstant an und kann durch die
@@ -195,7 +199,7 @@ Die Funktion erreicht ihren Maximalwert bei $\frac{\pi}{2}$ an
 der ersten Grenzfrequenz
 
 \begin{equation}
-  \omega_2\Bigl(\frac{\pi}{2}\Bigr) = \bar{\omega}_a = \sqrt{\frac{2}{LC_1}}.
+  \omega_1\Bigl(\frac{\pi}{2}\Bigr) = \bar{\omega}_a = \sqrt{\frac{2}{LC_1}}.
 \end{equation}
 Bei dem oberen Kurvenast $\omega_2$ mit positivem Vorzeichen vor der Wurzel in
 Gleichung \eqref{eqn:Omega} ist die Funktion zunächst annähernd
@@ -218,7 +222,7 @@ Funktionen $\omega_1$ und $\omega_2$ liegen, werden nicht herausgefiltert.
 
 \subsection{Phasen- und Gruppengeschwindigkeit einer LC-Kettenschaltung}
 
-Die Phasengeschwindigkeit einer Welle ist allgemein die Zeit $t$, die eine
+Die Phasengeschwindigkeit einer Welle ist die Zeit $t$, die eine
 Phasenverschiebung $\theta$ benötigt, um eine bestimmt Strecke zurückzulegen.
 In einer Kettenschaltung wird die Strecke durch die Menge an zurückgelegten
 Kettengliedern $n$ beschrieben.
@@ -228,8 +232,17 @@ Für die allgemeine Phasengeschwindigkeit in der LC-Kette folgt daher
   v_\text{ph} = \frac{\Delta n}{\Delta t} = \frac{\omega}{\theta}.
 \end{equation}
 Bei dieser Phasengeschwindigkeit wird von einer harmonischen Welle ausgegangen.
-Bei einer sogenannten Wellengruppe, die in Abbildung x dargestellt ist,
-verhält sich die Phasengeschwindigkeit anders. Nach dem Fourier-Theorem
+Bei einer sogenannten Wellengruppe, die in Abbildung \ref{fig:WP} dargestellt
+ist, verhält sich die Phasengeschwindigkeit anders.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 3.5cm]{Wellengruppe.png}
+  \caption{Graphische Darstellung eines Wellenpaketes.}
+  \label{fig:WP}
+\end{figure}
+
+Nach dem Fourier-Theorem
 muss diese Welle frequenzabhängig sein, was zur Folge hat, dass auch die
 Phasengeschwindigkeit $v_\text{ph}$ in der LC-Kette von der Frequenz abhängen
 muss.
@@ -246,9 +259,17 @@ unterschiedliche Phasengeschwindigkeiten, weshalb die Wellengruppe sich in Zeit
 und Raum ausdehnt. Die Ausdehnungsgeschwindigkeit des Wellengruppenmaximums
 bezeichnet man als Gruppengeschwindigkeit.
 Durch Überlagerung zweier Wellen mit ähnlichen Frequenzen können Wellengruppen
-erzeugt werden. Diese Überlagerung nennt man Schwebung. Sie ist in Abbildung x
-dargestellt.
-Für die Berechnung der Gruppengeschwindigkeit der wellengruppen einer Schwebung
+erzeugt werden. Diese Überlagerung nennt man Schwebung. Sie ist in Abbildung
+\ref{fig:Schweb} dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 2.5cm]{Schwebung.png}
+  \caption{Überlagerung von zwei ähnlichen Wellen.}
+  \label{fig:Schweb}
+\end{figure}
+
+Für die Berechnung der Gruppengeschwindigkeit der Wellengruppen einer Schwebung
 kann angenommen werden, dass
 
 \begin{align}
@@ -280,7 +301,7 @@ Die Gruppengeschwindigkeit beträgt nun
 \begin{equation}
   v_\text{gr} = \frac{\omega - \omega'}{\theta - \theta'} =
   \frac{\symup{d}\omega}{\symup{d}\theta} =
-  \frac{1}{\sqrt{LC}}\sqrt{1 - \frac{1}{4}LC\omega^2}.
+  \frac{1}{\sqrt{LC}}\sqrt{1 - \frac{1}{4}LC\omega^2}
 \end{equation}
 Für kleine Frequenzen $\omega \to 0$ nähern sich sowohl die Phasen- als auch
 die Gruppengeschwindigkeit dem Wert $\sqrt{\frac{1}{LC}}$ an.
@@ -288,14 +309,195 @@ die Gruppengeschwindigkeit dem Wert $\sqrt{\frac{1}{LC}}$ an.
 
 \subsection{Der Wellenwiderstand einer unendlichen LC-Kette}
 
-
-\subsection{Der Wellenwiderstand einer endlichen LC-Kette}
+Der Eingangswiderstand, oder auch Wellenwiderstand $Z$ ist der Widerstand, der
+bei einer theoretischen unendlichen Kette existiert, da die Welle durch die
+offenen Enden nicht reflektiert wird und die Energie sonst theoretisch
+verloren gehen würde.
+Der Widerstand ist der Quotient aus der Eingangsspannung und dem Eingangsstrom.
+Nach Abbildung \ref{fig:WW} kann mit Hilfe der Kirchhoffschen Gesetze die
+Gleichung
 
 \begin{equation}
-1
+  I_0 - \symup{i}\omega \frac{C}{2} U_0 + \frac{U_1 - U_0}{\symup{i}\omega L}=0
+  \label{eqn:Eingang}
+\end{equation}
+aufgestellt werden.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 4cm]{Wellenwiderstand.png}
+  \caption{Berechnung der Eingangsimpedanz.}
+  \label{fig:WW}
+\end{figure}
+
+Mit dem Lösungsansatz
+
+\begin{equation}
+  U_n(\theta) = U_0 \symup{e}^{-\symup{i}n\theta}
+\end{equation}
+für das $n$-te Kettenglied und der Dispersionsrelation \eqref{eqn:Dispersion}
+kann die Gleichung \eqref{eqn:Eingang} zu
+
+\begin{equation}
+  Z = \frac{U_0}{I_0} = \frac{\omega L}{\sin \theta}
+\end{equation}
+und schließlich zum Wellenwiderstand in Abhängigkeit von $\omega$
+
+\begin{equation}
+  Z(\omega) = \sqrt{\frac{L}{C}} \frac{1}{\sqrt{1-\frac{1}{4}\omega^2 LC}}.
+  \label{eqn:Zfuerunendlich}
+\end{equation}
+umgeformt werden.
+Wie an Gleichung \eqref{eqn:Zfuerunendlich} erkennbar ist, ist der
+Wellenwiderstand reell, womit die Stromstärke und Spannung in Phase sind.
+Eine unendliche LC-Kette ist nicht realisierbar, zur Simulation kann
+allerdings eine endliche LC-Kette verwendet werden, in welcher der
+Wellenwiderstand an das Ende der Kette geschaltet wird wie in Abbildung
+\ref{fig:endK}.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 2.5cm]{endlicheWelle.png}
+  \caption{Wellenwiderstand $Z$ in einer endlichen Kette.}
+  \label{fig:endK}
+\end{figure}
+
+Eine Skizze von $Z(\omega)$ ist in Abbildung \ref{fig:WO} abgebildet. Da der
+Wellenwiderstand für Frequenzen, die deutlich unter der Grenzfrequenz
+$\bar{\omega}$ liegen, annähernd konstant ist, kann dieser mit dem Grenzwert
+des Wertebereichs
+
+\begin{equation}
+  \omega = \sqrt{\frac{1}{LC}}
+\end{equation}
+eingebaut werden.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 5cm]{WiderstandOmega.png}
+  \caption{Skizze des Wellenwiderstandes $Z$ in Abhängigkeit von $\omega$.}
+  \label{fig:WO}
+\end{figure}
+
+
+\subsection{Eigenschaften einer endlichen LC-Kette}
+
+Bei einer endlichen LC-Kette werden die Signale am Kettenende reflektiert.
+Aufrgrund der Überlagerung von hin- und rücklaufenden Wellen können
+stehende Wellen entstehen.
+Zunächst wird der Quotient der Amplituden beider Wellen gebildet, wobei davon
+ausgegangen wird, dass am Ende der Kettenschaltung ein komplexer Widerstand
+$r$ geschaltet ist, der eine Phasenverschiebung und Abschwächung der
+hinlaufenden Welle bewirken kann.
+In Abbildung \ref{fig:Abschluss} sind die Ströme und Spannungen am Kettenende
+dargestellt.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 3.5cm]{Abschlusswiderstand.png}
+  \caption{Ströme und Spannungen am Kettenende einer endlichen LC-Kette.}
+  \label{fig:Abschluss}
+\end{figure}
+
+Für die Spannung am Abschlusswiderstand gilt
+
+\begin{equation}
+  U_\text{R} = U_\text{E} + U_\text{ref}
+\end{equation}
+und für die Stromstärke äquivalent
+
+\begin{equation}
+  I_\text{R} = I_\text{E} + I_\text{ref}.
+\end{equation}
+Wegen des Ohmschen Gesetzes
+
+\begin{equation}
+  U = RI
+\end{equation}
+gilt für die Abschlussspannung
+
+\begin{equation}
+  U_\text{R} = I_\text{R} r,
+\end{equation}
+für den hinlaufenden Strom
+
+\begin{equation}
+  I_\text{E} = \frac{U_\text{E}}{Z}
+\end{equation}
+mit dem Wellenwiderstand $Z$ der Kette und für den reflektierten Strom
+
+\begin{equation}
+  I_\text{ref} = - \frac{U_\text{ref}}{Z}.
+\end{equation}
+Daraus folgt das Spannungsverhältnis
+
+\begin{equation}
+  \frac{U_\text{ref}}{U_\text{E}} = \frac{r-Z}{r+Z}.
+\end{equation}
+Es werden nun drei Spezialfälle behandelt.
+Strebt $r \to \infty$, existiert also ein offenes Ende, so gilt die Gleichung
+
+\begin{equation}
+  U_\text{ref} = U_\text{E}.
+\end{equation}
+In diesem Fall wird die Welle also total ohne Phasenverschiebung reflektiert.
+Die Superposition der hin- und rücklaufenden Wellen mit
+
+\begin{align}
+  A_\text{hin} & = A_0 \cos(\omega t - n \theta) &
+  A_\text{rück} & = A_0 \cos(\omega t + n \theta)
+\end{align}
+ist
+
+\begin{equation}
+  A_\text{sup,1} =  2A_0 \cos \omega t \cos n \theta.
+\end{equation}
+Es kann sich eine stehende Welle ausbilden, falls am Kettenende ein
+Spannungsbauch auftritt, also wenn
+
+\begin{equation}
+  n_\text{max}\theta_\text{k} = k \pi
+  \label{eqn:BauchKnoten}
+\end{equation}
+mit $k \in \mathbb{Z}$. Dies ist in Abbildung \ref{fig:BauchKnot} abgebildet.
+Ist der Abschlusswiderstand $r = 0$, was bei einer kurzgeschlossenen Kette
+der Fall ist, so gilt
+
+\begin{equation}
+  U_\text{ref} = -U_\text{E}
+\end{equation}
+In diesem Fall wird die Welle total mit einer Phasenverschiebung $\pi$
+reflektiert.
+Die Superposition der hin- und rücklaufenden Wellen mit
+
+\begin{align}
+  A_\text{hin} & = A_0 \cos(\omega t - n \theta) &
+  A_\text{rück} & = -A_0 \cos(\omega t + n \theta)
+\end{align}
+ist
+
+\begin{equation}
+  A_\text{sup,2} =  2A_0 \sin \omega t \sin n \theta.
+\end{equation}
+Es kann sich eine stehende Welle ausbilden, falls am Kettenende ein
+Spannungsknoten auftritt, also ebenfalls wenn Gleichung
+\eqref{eqn:BauchKnoten} gilt.
+Auch dieser Fall ist in Abbildung \ref{fig:BauchKnot} abgebildet.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 7.5cm]{Reflexion.png}
+  \caption{Spannungsamplitude einer stehenden Welle.}
+  \label{fig:BauchKnot}
+\end{figure}
+
+Der letzte Fall $r=Z$, welcher eine unendliche Kette beschreibt, wurde bereits
+behandelt. Die Welle wird nicht reflektiert, es gilt
+
+\begin{equation}
+  U_\text{ref} = 0.
 \end{equation}
 
 Quellen bei Abbildungen !!!
-
 
 \cite{sample}
