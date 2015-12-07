@@ -187,7 +187,7 @@ steigt die Kreisfrequenz zunächst annähernd konstant an und kann durch die
 Gleichung
 
 \begin{equation}
-  \omega_2 (\theta) = \sqrt{\frac{2}{L(C_1 + C_2)} \theta}
+  \omega_2 (\theta) = \sqrt{\frac{2}{L(C_1 + C_2)}} \theta
 \end{equation}
 beschrieben werden.
 Die Funktion erreicht ihren Maximalwert bei $\frac{\pi}{2}$ an
@@ -214,7 +214,27 @@ oberen Grenzfrequenz $\bar{\omega}_c$ werden alle Frequenzen durch den
 Tiefpass herausgefiltert. Die restlichen Frequenzen, die im Wertebereich der
 Funktionen $\omega_1$ und $\omega_2$ liegen, werden nicht herausgefiltert.
 
-\subsection{Analogien zur Mechanik}
+
+\subsection{Phasen- und Gruppengeschwindigkeit einer LC-Kettenschaltung}
+
+Die Phasengeschwindigkeit einer Welle ist allgemein die Zeit $t$, die eine
+Phasenverschiebung $\theta$ benötigt, um eine bestimmt Strecke zurückzulegen.
+In einer Kettenschaltung wird die Strecke durch die Menge an zurückgelegten
+Kettengliedern $n$ beschrieben.
+Für die allgemeine Phasengeschwindigkeit in der LC-Kette folgt daher
+
+\begin{equation}
+  v_\text{ph} = \frac{\Delta n}{\Delta t} = \frac{\omega}{\theta}.
+\end{equation}
+Bei dieser Phasengeschwindigkeit wurde von einer harmonischen Welle ausgegangen.
+Bei einer sogenannten Wellengruppe, die in Abbildung x dargestellt ist,
+verhält sich die Phasengeschwindigkeit anders. Nach dem Fourier-Theorem
+muss diese Welle frequenzabhängig sein, was zur Folge hat, dass auch die
+Phasengeschwindigkeit $v_\text{ph}$ in der LC-Kette von der Frequenz abhängen
+muss. Die einzelnen Fourierkomponenten der Welle haben unterschiedliche
+Phasengeschwindigkeiten, weshalb die Wellengruppe sich in Zeit und Raum
+ausdehnt. Die Ausdehnungsgeschwindigkeit des Wellengruppenmaximums
+bezeichnet man als Gruppengeschwindigkeit.
 
 
 \begin{equation}

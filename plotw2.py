@@ -14,7 +14,7 @@ b = np.linspace(0, np.pi/2, 1000)
 m = np.sqrt((1/L)*((1/C1) + (1/C2)) + (1/L)* np.sqrt(((1/C1) + (1/C2))**2 - (4*(np.sin(np.pi/2))**2)/(C1*C2)))
 n = np.sqrt((1/L)*((1/C1) + (1/C2)) + (1/L)* np.sqrt(((1/C1) + (1/C2))**2 - (4*(np.sin(0))**2)/(C1*C2)))
 
-plt.plot(a, 0*a + m,'k', label = r'$\omega_2(\frac{\pi}{2})$')
+plt.plot(a, 0*a + m,'b', label = r'$\omega_2(\frac{\pi}{2})$')
 plt.plot(b, 0*b + n, 'k', label = r'$\omega_2(0)$')
 
 plt.legend(loc = 'best')

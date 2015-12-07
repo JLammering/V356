@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Messwerte:
-x, y = np.genfromtxt('b1.txt', unpack = True)
-y = np.pi*y/16
-x = 2*np.pi*x
-plt.plot(y, x, 'k.')
+y, x = np.genfromtxt('b1.txt', unpack = True)
+x = np.pi*x/32
+y = 2*np.pi*y
+plt.plot(x, y, 'k.', label = r'$Messwerte$')
 
 # Werte:
 C1 = 20 * 10**(-9)
@@ -19,10 +19,12 @@ L = 1.217 * 10**(-3)
 
 # Dispersionskurve:
 t = np.linspace(0, np.pi/2, 1000)
-plt.plot(t, np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) + (1/C2))**2 - (4*(np.sin(t))**2)/(C1*C2))), 'r', label = r'$\omega_1$')
+plt.plot(t, np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) +
+(1/C2))**2 - (4*(np.sin(t))**2)/(C1*C2))), 'r', label = r'$\omega_1$')
 
 # Grenzfrequenz:
-m = np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) + (1/C2))**2 - (4*(np.sin(np.pi/2))**2)/(C1*C2)))
+m = np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) + (1/C2))**2 -
+(4*(np.sin(np.pi/2))**2)/(C1*C2)))
 a = np.linspace(0, np.pi, 1000)
 plt.plot(a, 0*a + m,'k', label = r'$\omega_1(\frac{\pi}{2})$')
 
