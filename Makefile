@@ -20,7 +20,6 @@ build/plotw1.pdf: plotw1.py matplotlibrc b1.txt header-matplotlib.tex | build
 build/plotw2.pdf: plotw2.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plotw2.py
 
-<<<<<<< HEAD
 build/plotd_1.pdf: plotd_1.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plotd_1.py
 

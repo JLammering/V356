@@ -92,6 +92,7 @@ Es ergibt sich die Dispersionsrelation
 
 \begin{equation}
   \omega_k(\theta) = \sqrt{\frac{2}{LC}(1-\cos\theta)},
+  \label{eqn:Dispersion}
 \end{equation}
 das ist die Kreisfrequenz
 $\omega_k$ in Abhängigkeit von der Phasenverschiebung $\theta$ pro Kettenglied.
@@ -181,13 +182,13 @@ dargestellt.
   \caption{Skizze der Graphen von $\omega_1$ und $\omega_2$}
   \label{fig:KurveLC1C2}
 \end{figure}
-Bei dem unteren Kurvenast $\omega_2$ mit negativem Vorzeichen vor der Wurzel
+Bei dem unteren Kurvenast $\omega_1$ mit negativem Vorzeichen vor der Wurzel
 in Gleichung \eqref{eqn:Omega}
 steigt die Kreisfrequenz zunächst annähernd konstant an und kann durch die
 Gleichung
 
 \begin{equation}
-  \omega_2 (\theta) = \sqrt{\frac{2}{L(C_1 + C_2)}} \theta
+  \omega_1 (\theta) = \sqrt{\frac{2}{L(C_1 + C_2)}} \theta
 \end{equation}
 beschrieben werden.
 Die Funktion erreicht ihren Maximalwert bei $\frac{\pi}{2}$ an
@@ -196,18 +197,18 @@ der ersten Grenzfrequenz
 \begin{equation}
   \omega_2\Bigl(\frac{\pi}{2}\Bigr) = \bar{\omega}_a = \sqrt{\frac{2}{LC_1}}.
 \end{equation}
-Bei dem oberen Kurvenast $\omega_1$ mit positivem Vorzeichen vor der Wurzel in
+Bei dem oberen Kurvenast $\omega_2$ mit positivem Vorzeichen vor der Wurzel in
 Gleichung \eqref{eqn:Omega} ist die Funktion zunächst annähernd
 proportional zu $(1-\theta^2)$.
 Sie hat ein Minimum bei der zweiten Grenzfrequenz
 
 \begin{equation}
-  \omega_1\Bigl(\frac{\pi}{2}\Bigr) = \bar{\omega}_b = \sqrt{\frac{2}{LC_2}}
+  \omega_2\Bigl(\frac{\pi}{2}\Bigr) = \bar{\omega}_b = \sqrt{\frac{2}{LC_2}}
 \end{equation}
 und ein Maximum bei der dritten Grenzfrequenz
 
 \begin{equation}
-  \omega_1(0) = \bar{\omega}_c = \sqrt{\frac{2(C_1+C_2)}{LC_1C_2}}.
+  \omega_2(0) = \bar{\omega}_c = \sqrt{\frac{2(C_1+C_2)}{LC_1C_2}}.
 \end{equation}
 Zwischen den Grenzfrequenzen $\bar{\omega}_a$ und $\bar{\omega}_b$ und ab der
 oberen Grenzfrequenz $\bar{\omega}_c$ werden alle Frequenzen durch den
@@ -226,16 +227,69 @@ Für die allgemeine Phasengeschwindigkeit in der LC-Kette folgt daher
 \begin{equation}
   v_\text{ph} = \frac{\Delta n}{\Delta t} = \frac{\omega}{\theta}.
 \end{equation}
-Bei dieser Phasengeschwindigkeit wurde von einer harmonischen Welle ausgegangen.
+Bei dieser Phasengeschwindigkeit wird von einer harmonischen Welle ausgegangen.
 Bei einer sogenannten Wellengruppe, die in Abbildung x dargestellt ist,
 verhält sich die Phasengeschwindigkeit anders. Nach dem Fourier-Theorem
 muss diese Welle frequenzabhängig sein, was zur Folge hat, dass auch die
 Phasengeschwindigkeit $v_\text{ph}$ in der LC-Kette von der Frequenz abhängen
-muss. Die einzelnen Fourierkomponenten der Welle haben unterschiedliche
-Phasengeschwindigkeiten, weshalb die Wellengruppe sich in Zeit und Raum
-ausdehnt. Die Ausdehnungsgeschwindigkeit des Wellengruppenmaximums
-bezeichnet man als Gruppengeschwindigkeit.
+muss.
+Über die bereits berechnete Dispersionsrelation \eqref{eqn:Dispersion} einer
+LC-Kette kann die Phasengeschwindigkeit bestimmt werden.
+Sie lautet
 
+\begin{equation}
+  v_\text{ph} = \frac{\omega}{\theta} = \frac{\omega}{\arccos \Bigl(
+  1-\frac{1}{2}\omega^2LC\Bigr)}.
+\end{equation}
+Die einzelnen Fourierkomponenten der Welle haben wie bereits erwähnt
+unterschiedliche Phasengeschwindigkeiten, weshalb die Wellengruppe sich in Zeit
+und Raum ausdehnt. Die Ausdehnungsgeschwindigkeit des Wellengruppenmaximums
+bezeichnet man als Gruppengeschwindigkeit.
+Durch Überlagerung zweier Wellen mit ähnlichen Frequenzen können Wellengruppen
+erzeugt werden. Diese Überlagerung nennt man Schwebung. Sie ist in Abbildung x
+dargestellt.
+Für die Berechnung der Gruppengeschwindigkeit der wellengruppen einer Schwebung
+kann angenommen werden, dass
+
+\begin{align}
+\frac{1}{2}(\omega + \omega') & = \omega & \frac{1}{2}(\theta + \theta') &
+= \theta
+\label{eqn:SchwebungBedingung}
+\end{align}
+ist, da die Wellen zunächst ähnlich sein müssen.
+Die Amplituden der beiden Wellen seien ebenfalls ähnlich und es gilt
+
+\begin{equation}
+  A(t) = A_0 \Bigl(\cos(\omega t - \theta) \cos(\omega' t - \theta')\Bigr).
+\end{equation}
+Mit Hilfe der trigonometrischen Additionstheoreme und den Annahmen aus den
+Gleichungen \eqref{eqn:SchwebungBedingung} folgt
+
+\begin{equation}
+  A(t) = 2 A_0 \cos(\omega t - \theta) \cdot \cos \Bigr(\frac{1}{2}
+  ((\omega-\omega')t-(\theta-\theta'))\Bigr).
+\end{equation}
+mit der Amplitude
+
+\begin{equation}
+  \cos \Bigr(\frac{1}{2}
+  ((\omega-\omega')t-(\theta-\theta'))\Bigr).
+\end{equation}
+Die Gruppengeschwindigkeit beträgt nun
+
+\begin{equation}
+  v_\text{gr} = \frac{\omega - \omega'}{\theta - \theta'} =
+  \frac{\symup{d}\omega}{\symup{d}\theta} =
+  \frac{1}{\sqrt{LC}}\sqrt{1 - \frac{1}{4}LC\omega^2}.
+\end{equation}
+Für kleine Frequenzen $\omega \to 0$ nähern sich sowohl die Phasen- als auch
+die Gruppengeschwindigkeit dem Wert $\sqrt{\frac{1}{LC}}$ an.
+
+
+\subsection{Der Wellenwiderstand einer unendlichen LC-Kette}
+
+
+\subsection{Der Wellenwiderstand einer endlichen LC-Kette}
 
 \begin{equation}
 1
