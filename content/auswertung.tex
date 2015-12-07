@@ -1,2 +1,113 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Durchlasskurve}
+
+\subsubsection{Berechnung}
+
+\begin{table}
+  \centering
+  \caption{Tabelle mit den gegebenen Werten.}
+  \label{tab:wertedurch}
+  \begin{tabular}{c c c}
+    \toprule
+    $L \ /\ \si{\milli\henry}$ & $C_1 \ /\ \si{\nano\farad}$ & $C_2 \ /\ \si{\nano\farad}$ \\
+    \midrule
+    1,217 & 20 & 10\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Es existieren drei Grenzfrequenzen. Da es ein Tiefpass ist, werden alle Spannungen
+dessen Frequenz unterhalb eines bestimmten Wertes liegen durchgelassen.
+In diesem Bereich fließt der Strom über die Spulen und kann so den Stromkreis
+passieren. Dieser Wert
+wird folgend $\nu_1$ genannt und ist die erste Grenzfrequenz.
+Zur Berechnung wird die Formel \eqref{nu1} genutzt.
+
+\begin{equation}
+  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L*C_1}}
+\end{equation}
+In diesem Fall ergibt dies $\nu_1 = \SI{45622}{\hertz}$.
+
+Ab $\nu_1$ existiert ein Frequenzbereich in dem kaum Spannung durchgelassen wird.
+Der geht bis $\nu_2$ der zweiten Grenzfrequenz. Die Formel lautet :
+
+\begin{equation}
+  \nu_2 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L*C_2}}.
+\end{equation}
+Das Ergebnis ist $\nu_2 = \SI{64519}{\hertz}$.
+
+Bis $\nu_3$, der dritten Grenzfrequenz, ist ein Bereich, in dem wieder Spannung
+durchgelassen wird. Und ab da wird endgültig keine Spannung durchgelassen. Die
+benutzte Formel lautet:
+
+\begin{equation}
+  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2*(C_1+C_2)}{L*C_1*C_2}}.
+\end{equation}
+Das Ergebnis ist $\nu_3 = \SI{79020}{\hertz}$.
+
+\subsubsection{Aufgenommene Messkurve}
+
+
+\subsection{Dispersionskurve}
+
+\subsubsection{Messwerte}
+
+\begin{table}
+  \centering
+  \caption{Tabelle mit den Messwerten.}
+  \label{tab:wertedis}
+  \begin{tabular}{c c}
+    \toprule
+     $\nu \ /\ \si{\hertz}}$ & Phasenverschiebung\\
+    \midrule
+    4 & 0\\
+    4360 & 1\\
+    7767 & 2\\
+    12102 & 3\\
+    15225 & 4\\
+    19075 & 5\\
+    23271 & 6\\
+    26975 & 7\\
+    30055 & 8\\
+    33298 & 9\\
+    35276 & 10\\
+    38600 & 11\\
+    44560 & 13\\
+    52613 & 16\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+In Tabelle \ref{tab:wertedis} sind die gemessenen Werte zur Bestimmung der
+Dispersionskurven abgebildet. Hier wurde anders als bei der Kopie der
+Originaldaten angenommen, dass zwischen dem elften und zwölften Messwert,
+sowie dem zwölften und dreizehnten Wert ein Wert fehlt.
+
+\subsubsection{Grafiken}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotw1.pdf}
+  \caption{Der untere Ast der Dispersionskurve.}
+  \label{fig:astw1}
+\end{figure}
+
+In Abbildung \ref{fig:astw1} sind die aufgenommenen Messwerte, sowie zwei
+Theoriekurven eingezeichnet.
+
+Die Kurven $\omega_1$ und $\omega_1(\frac{\pi}{2}$ sind nach Gleichung
+\eqref{eqn:Omega} mit dem negativen
+Vorzeichen mit $matplotlib$ \cite{matplotlib} erstellt worden.
+$\omega_1(\frac{\pi}{2}$ ist die Kreisfrequenz die durch Division durch
+$2\cdot\pi$ die Grenzfrequenz $\nu_1$ ergibt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotw2.pdf}
+  \caption{Der obere Ast der Dispersionskurve.}
+  \label{fig:astw2}
+\end{figure}
+
+In Abbildung \ref{fig:astw2} sind drei Theoriekurven eingezeichnet.
