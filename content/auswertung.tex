@@ -58,8 +58,8 @@ Das Ergebnis ist $\nu_3 = \SI{79020}{\hertz}$.
 
 In Abbildung \ref{fig:plota} ist die Durchlasskurve der $LC_1C_2$-Kette zu
 sehen. Auf der Abzisse ist die Frequenz $\nu$ in $\si{\hertz}$ aufgetragen. Die
-Ordinate bildet die Spannung $U$ in $\si{\volt}$ ab.
-Spannung Die Skalierung der x-Achse ist logarithmisch. Durch eine lineare
+Ordinate bildet die Spannung $U$ in $\si{\volt}$ ab. Die Skalierung der x-Achse
+ ist logarithmisch. Durch eine lineare
 Regression mit Hilfe der Funktion $linregress$ aus $numpy$ \cite{numpy} wird
 eine Formel bestimmt, die Entfernungen auf dem Papier in die entsprechende
 Frequenz umrechnet.
@@ -70,7 +70,9 @@ Berechnet wurde so die Formel:
   \nu = \exp^(\SI{0,0644}{\hertz\per\centi\meter} \cdot x + \SI{10,0400}{\hertz}).
 \end{equation}
 
-Nun können die die Grenzfrequenzen abgelesen werden.
+Nun können die die Grenzfrequenzen abgelesen werden. Demnach ist bei $\SI{11,5}{\centi\meter}$
+$\nu_1 = \SI{48079}{\hertz}$, bei $\SI{16,1}{\centi\meter}$ $\nu_2 = \SI{64}{\hertz}$ und
+bei $\SI{19,2}{\centi\meter}$ $\nu_3 = \SI{78943}{\hertz}$.
 
 \subsection{Dispersionskurve}
 
@@ -124,7 +126,7 @@ $\theta$ aufgetragen.
 Die Kurven $\omega_1$ und $\omega_1(\frac{\pi}{2})$ sind nach Gleichung
 \eqref{eqn:Omega} mit dem negativen
 Vorzeichen mit $matplotlib$ \cite{matplotlib} erstellt worden.
-$\omega_1(\frac{\pi}{2}$ ist die Kreisfrequenz die durch Division durch
+$\omega_1(\frac{\pi}{2}$ ist die Kreisfrequenz, die durch Division durch
 $2\cdot\pi$ die Grenzfrequenz $\nu_1$ ergibt.
 
 \begin{figure}
@@ -140,3 +142,142 @@ $\omega_2$ wird nach Gleichung \eqref{eqn:Omega} mit positivem Vorzeichen
 gezeichnet. Die beiden anderen Kurven sind spezielle Werte von $\omega_2$,
 nämlich die Grenzfrequenzen $\nu_2$ und $\nu_3$; slebsterklärend umgerechnet
 wie oben beschrieben.
+
+\subsection{Eigenfrequenzen}
+Es wird die 
+
+\subsection{Stehende Wellen}
+
+Nun wird das Verhalten einer reflektierten Welle in der Kettenschaltung
+untersucht.
+
+\subsubsection{Messergebnisse}
+
+\begin{table}[h]
+    \begin{minipage}{.45\linewidth}
+      \caption{Messwerte bei $\nu = \SI{5040}{\hertz}$.}
+      \label{tab:erstesmax}
+      \centering
+        \begin{tabular}{c c}
+          \toprule
+          Kettenglied & $U \:/\: \si{\volt}$\\
+          \midrule
+          0 & 1,9\\
+          1 & 1,85\\
+          2 & 1,73\\
+          3 & 1,50\\
+          4 & 1,26\\
+          5 & 1,00\\
+          6 & 0,62\\
+          7 & 0,29\\
+          8 & 0,02\\
+          9 & 0,30\\
+          10 & 0,59\\
+          11 & 0,85\\
+          12 & 1,25\\
+          13 & 1,31\\
+          14 & 1,49\\
+          15 & 1,59\\
+          16 & 1,62\\
+          \bottomrule
+        \end{tabular}
+    \end{minipage}%
+    \begin{minipage}{.45\linewidth}
+      \centering
+        \caption{Messwerte bei $\nu = \SI{9990}{\hertz}$.}
+        \label{tab:zweitesmax}
+        \begin{tabular}{c c}
+          \toprule
+          Kettenglied & $U \:/\: \si{\volt}$\\
+          \midrule
+          0 & 1,7\\
+          1 & 1,53\\
+          2 & 1,25\\
+          3 & 0,65\\
+          4 & 0,014\\
+          5 & 0,63\\
+          6 & 1,24\\
+          7 & 1,65\\
+          8 & 1,82\\
+          9 & 1,70\\
+          10 & 1,29\\
+          11 & 0,70\\
+          12 & 0,006\\
+          13 & 0,69\\
+          14 & 1,29\\
+          15 & 1,68\\
+          16 & 1,75\\
+          \bottomrule
+        \end{tabular}
+    \end{minipage}
+\end{table}
+
+Die Werte aus Tabelle \ref{tab:erstesmax} und aus Tabelle \ref{tab:zweitesmax}
+wurden mit der gleichen Schaltung, aber bei unterschiedlichen Frequenzen bestimmt.
+Nämlich der ersten und zweiten Eigenschwingung.
+
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte bei abgeschlossener Kette.}
+  \label{tab:absw=wellw}
+  \begin{tabular}{c c}
+    \toprule
+     Kettenglied & $U \:/\: \si{\volt}$\\
+    \midrule
+    0 & 66\\
+    1 & 66\\
+    2 & 65,8\\
+    3 & 64,8\\
+    4 & 64,0\\
+    5 & 63,8\\
+    6 & 63,0\\
+    7 & 63,0\\
+    8 & 63,0\\
+    9 & 63,8\\
+    10 & 64,0\\
+    11 & 64,2\\
+    12 & 65,0\\
+    13 & 65,9\\
+    14 & 66\\
+    15 & 66,2\\
+    16 & 66,2\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Zur Aufnahme der Werte aus Tabelle \ref{tab:absw=wellw} wird die Kette mit dem
+Wellenwiderstand $Z = \SI{282}{\ohm}$ abgeschlossen.
+
+\subsubsection{Grafiken}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics{build/plotd_1.pdf}
+    \caption{Messpunkte bei $\nu = \SI{5040}{\hertz}$.}
+    \label{fig:erstesmax}
+  \end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics{build/plotd_2.pdf}
+    \caption{Messpunkte bei $\nu = \SI{9990}{\hertz}$.}
+    \label{fig:zweitesmax}
+  \end{subfigure}
+  \caption{Stehende Wellen.}
+  \label{fig:stwell}
+\end{figure}
+
+In den Abbildungen \ref{fig:erstesmax} und \ref{fig:zweitesmax} sind die Messpunkte
+aus den Tabellen \ref{tab:erstesmax} und \ref{tab:zweitesmax} aufgetragen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = \textwidth]{build/plote.pdf}
+  \caption{Messpunkte bei abgeschlossener Kette.}
+  \label{fig:absw=wellw}
+\end{figure}
+
+In Abbildung \ref{fig:absw=wellw} sind die Messpunkte bei abgeschlossener Kette
+eingetragen.
