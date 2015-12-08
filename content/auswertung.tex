@@ -26,7 +26,7 @@ wird folgend $\nu_1$ genannt und ist die erste Grenzfrequenz.
 Zur Berechnung wird die Formel \eqref{nu1} genutzt.
 
 \begin{equation}
-  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L*C_1}}
+  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_1}}
 \end{equation}
 In diesem Fall ergibt dies $\nu_1 = \SI{45622}{\hertz}$.
 
@@ -34,7 +34,7 @@ Ab $\nu_1$ existiert ein Frequenzbereich in dem kaum Spannung durchgelassen wird
 Der geht bis $\nu_2$ der zweiten Grenzfrequenz. Die Formel lautet :
 
 \begin{equation}
-  \nu_2 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L*C_2}}.
+  \nu_2 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_2}}.
 \end{equation}
 Das Ergebnis ist $\nu_2 = \SI{64519}{\hertz}$.
 
@@ -43,12 +43,34 @@ durchgelassen wird. Und ab da wird endgültig keine Spannung durchgelassen. Die
 benutzte Formel lautet:
 
 \begin{equation}
-  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2*(C_1+C_2)}{L*C_1*C_2}}.
+  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2 \cdot (C_1+C_2)}{L \cdot C_1 \cdot C_2}}.
 \end{equation}
 Das Ergebnis ist $\nu_3 = \SI{79020}{\hertz}$.
 
 \subsubsection{Aufgenommene Messkurve}
 
+\begin{figure*}[p]
+  \centering
+  \makebox[\textwidth]{\includegraphics[width=.9\paperwidth]{plota.pdf}}
+  \caption{Aufgenommene Messkurve.}
+  \label{fig:plota}
+\end{figure*}
+
+In Abbildung \ref{fig:plota} ist die Durchlasskurve der $LC_1C_2$-Kette zu
+sehen. Auf der Abzisse ist die Frequenz $\nu$ in $\si{\hertz}$ aufgetragen. Die
+Ordinate bildet die Spannung $U$ in $\si{\volt}$ ab.
+Spannung Die Skalierung der x-Achse ist logarithmisch. Durch eine lineare
+Regression mit Hilfe der Funktion $linregress$ aus $numpy$ \cite{numpy} wird
+eine Formel bestimmt, die Entfernungen auf dem Papier in die entsprechende
+Frequenz umrechnet.
+
+Berechnet wurde so die Formel:
+
+\begin{equation}
+  \nu = \exp^(\SI{0,0644}{\hertz\per\centi\meter} \cdot x + \SI{10,0400}{\hertz}).
+\end{equation}
+
+Nun können die die Grenzfrequenzen abgelesen werden.
 
 \subsection{Dispersionskurve}
 
@@ -95,9 +117,11 @@ sowie dem zwölften und dreizehnten Wert ein Wert fehlt.
 \end{figure}
 
 In Abbildung \ref{fig:astw1} sind die aufgenommenen Messwerte, sowie zwei
-Theoriekurven eingezeichnet.
+Theoriekurven eingezeichnet. Hier ist die Kreisfrequenz $\omega$ gegen die
+Phasenverschiebung
+$\theta$ aufgetragen.
 
-Die Kurven $\omega_1$ und $\omega_1(\frac{\pi}{2}$ sind nach Gleichung
+Die Kurven $\omega_1$ und $\omega_1(\frac{\pi}{2})$ sind nach Gleichung
 \eqref{eqn:Omega} mit dem negativen
 Vorzeichen mit $matplotlib$ \cite{matplotlib} erstellt worden.
 $\omega_1(\frac{\pi}{2}$ ist die Kreisfrequenz die durch Division durch
@@ -110,4 +134,9 @@ $2\cdot\pi$ die Grenzfrequenz $\nu_1$ ergibt.
   \label{fig:astw2}
 \end{figure}
 
-In Abbildung \ref{fig:astw2} sind drei Theoriekurven eingezeichnet.
+In Abbildung \ref{fig:astw2} sind drei Theoriekurven eingezeichnet. Die Achsen
+sind ebenso belegt, wie bei Abbildung \ref{fig:astw1}.
+$\omega_2$ wird nach Gleichung \eqref{eqn:Omega} mit positivem Vorzeichen
+gezeichnet. Die beiden anderen Kurven sind spezielle Werte von $\omega_2$,
+nämlich die Grenzfrequenzen $\nu_2$ und $\nu_3$; slebsterklärend umgerechnet
+wie oben beschrieben.

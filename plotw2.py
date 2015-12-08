@@ -21,7 +21,7 @@ plt.legend(loc = 'best')
 plt.ylim(350000, 550000)
 plt.xlim(0, np.pi/2, 1000)
 plt.xlabel(r'$\theta$')
-plt.ylabel(r'$\omega \, s$')
+plt.ylabel(r'$\omega \:/\: \si{\hertz}$')
 plt.grid()
 
 print(m,n)
