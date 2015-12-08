@@ -43,7 +43,7 @@ durchgelassen wird. Und ab da wird endgültig keine Spannung durchgelassen. Die
 benutzte Formel lautet:
 
 \begin{equation}
-  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2 \cdot (C_1+C_2)}{L \cdot C_1 \cdot C_2}}.
+  \nu_3 = \frac{1}{2\cdot\pi}\sqrt{\frac{2 \cdot (C_1+C_2)}{L \cdot C_1 \cdot C_2}}.
 \end{equation}
 Das Ergebnis ist $\nu_3 = \SI{79020}{\hertz}$.
 
@@ -67,11 +67,11 @@ Frequenz umrechnet.
 Berechnet wurde so die Formel:
 
 \begin{equation}
-  \nu = \exp^(\SI{0,0644}{\hertz\per\centi\meter} \cdot x + \SI{10,0400}{\hertz}).
+  \nu = \exp(\SI{0,0644}{\hertz\per\centi\meter} \cdot x + \SI{10,0400}{\hertz}).
 \end{equation}
 
 Nun können die die Grenzfrequenzen abgelesen werden. Demnach ist bei $\SI{11,5}{\centi\meter}$
-$\nu_1 = \SI{48079}{\hertz}$, bei $\SI{16,1}{\centi\meter}$ $\nu_2 = \SI{64}{\hertz}$ und
+$\nu_1 = \SI{48079}{\hertz}$, bei $\SI{16,1}{\centi\meter}$ $\nu_2 = \SI{64656}{\hertz}$ und
 bei $\SI{19,2}{\centi\meter}$ $\nu_3 = \SI{78943}{\hertz}$.
 
 \subsection{Dispersionskurve}
@@ -126,7 +126,7 @@ $\theta$ aufgetragen.
 Die Kurven $\omega_1$ und $\omega_1(\frac{\pi}{2})$ sind nach Gleichung
 \eqref{eqn:Omega} mit dem negativen
 Vorzeichen mit $matplotlib$ \cite{matplotlib} erstellt worden.
-$\omega_1(\frac{\pi}{2}$ ist die Kreisfrequenz, die durch Division durch
+$\omega_1(\frac{\pi}{2})$ ist die Kreisfrequenz, die durch Division durch
 $2\cdot\pi$ die Grenzfrequenz $\nu_1$ ergibt.
 
 \begin{figure}
@@ -144,11 +144,55 @@ nämlich die Grenzfrequenzen $\nu_2$ und $\nu_3$; slebsterklärend umgerechnet
 wie oben beschrieben.
 
 \subsection{Eigenfrequenzen}
-Es wird die 
+Es wird die Phasengeschwindigkeit $v_{\text{Ph}}$ in Abhängigkeit der Frequenz
+$\nu$ bestimmt.
+
+\subsubsection{Messwerte}
+
+\begin{table}[h]
+  \centering
+  \caption{Eigenfrequenzen $nu_i$.}
+  \label{tab:nui}
+  \begin{tabular}{c c}
+    \toprule
+     $\nu_i \:/\: \si{\hertz}$ & Eigenfrequenz i\\
+    \midrule
+    5040 & 1\\
+    9990 & 2\\
+    14870 & 3\\
+    19630 & 4\\
+    24180 & 5\\
+    28380 & 6\\
+    32390 & 7\\
+    36290 & 8\\
+    39600 & 9\\
+    42600 & 10\\
+    45100 & 11\\
+    47300 & 12\\
+    48600 & 13\\
+    50600 & 14\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+In Tabelle \ref{tab:nui} sind die Eigenfrequenzen eingetragen.
+
+\subsubsection{Grafik}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvph.pdf}
+  \caption{Plot der Phasengeschwindigkeit.}
+  \label{fig:vph}
+\end{figure}
+
+In Abbildung \ref{fig:vph} ist die Phasengeschwindigkeit $v_{text{Ph}}$ in
+Abhängigkeit von der Frequenz
+$\nu$ aufgetragen.
 
 \subsection{Stehende Wellen}
 
-Nun wird das Verhalten einer reflektierten Welle in der Kettenschaltung
+Nun wird das Verhalten reflektierter Wellen in der Kettenschaltung
 untersucht.
 
 \subsubsection{Messergebnisse}
@@ -253,20 +297,16 @@ Wellenwiderstand $Z = \SI{282}{\ohm}$ abgeschlossen.
 
 \begin{figure}[h]
   \centering
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics{build/plotd_1.pdf}
-    \caption{Messpunkte bei $\nu = \SI{5040}{\hertz}$.}
-    \label{fig:erstesmax}
-  \end{subfigure}
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-    \includegraphics{build/plotd_2.pdf}
-    \caption{Messpunkte bei $\nu = \SI{9990}{\hertz}$.}
-    \label{fig:zweitesmax}
-  \end{subfigure}
-  \caption{Stehende Wellen.}
-  \label{fig:stwell}
+  \includegraphics[width = \textwidth]{build/plotd_1.pdf}
+  \caption{Messpunkte bei $\nu = \SI{5040}{\hertz}$.}
+  \label{fig:erstesmax}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{build/plotd_2.pdf}
+  \caption{Messpunkte bei $\nu = \SI{9990}{\hertz}$.}
+  \label{fig:zweitesmax}
 \end{figure}
 
 In den Abbildungen \ref{fig:erstesmax} und \ref{fig:zweitesmax} sind die Messpunkte

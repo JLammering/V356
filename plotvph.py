@@ -13,6 +13,8 @@ plt.plot(w, w/(np.arccos(1-0.5*L*C*(w)**2)))
 x = np.linspace(1, 320000)
 plt.plot(x, 0*x + 1/np.sqrt(L*C))
 plt.xlim(0, 320000)
+plt.xlabel(r'$\omega \:/\: \si{\hertz}$')
+plt.ylabel(r'$v_{\text{Ph}} \:/\: \si{\meter\per\second}$')
 
 
 plt.savefig('build/plotvph.pdf')
