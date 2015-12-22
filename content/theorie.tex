@@ -34,7 +34,7 @@ Schaltung eingebaut wird.
   \label{fig:Ketten}
 \end{figure}
 
-Im Folgenden werden spezifische Tiefpässe mit konstanten und
+Im Folgenden werden LC-Ketten mit konstanten und
 alternierenden Kapazitäten analysiert.
 
 
@@ -188,8 +188,8 @@ dargestellt.
 
 Bei dem unteren Kurvenast $\omega_1$ mit negativem Vorzeichen vor der Wurzel
 in Gleichung \eqref{eqn:Omega}
-steigt die Kreisfrequenz zunächst annähernd konstant an und kann durch die
-Gleichung
+steigt die Kreisfrequenz zunächst annähernd konstant an und kann für kleine
+\theta durch die Gleichung
 
 \begin{equation}
   \omega_1 (\theta) = \sqrt{\frac{2}{L(C_1 + C_2)}} \theta
@@ -230,10 +230,12 @@ Für die allgemeine Phasengeschwindigkeit in der LC-Kette folgt daher
 
 \begin{equation}
   v_\text{ph} = \frac{\Delta n}{\Delta t} = \frac{\omega}{\theta}.
+  \label{eqn:Phase}
 \end{equation}
 Bei dieser Phasengeschwindigkeit wird von einer harmonischen Welle ausgegangen.
 Bei einer sogenannten Wellengruppe, die in Abbildung \ref{fig:WP} dargestellt
-ist, verhält sich die Phasengeschwindigkeit anders.
+ist, verhält sich die Phasengeschwindigkeit gleich, es existiert aber zusätzlich
+eine sogenannte Gruppengeschwindigkeit.
 
 \begin{figure}
   \centering
@@ -242,7 +244,7 @@ ist, verhält sich die Phasengeschwindigkeit anders.
   \label{fig:WP}
 \end{figure}
 
-Nach dem Fourier-Theorem
+Nach Gleichung \eqref{eqn:Phase}
 muss diese Welle frequenzabhängig sein, was zur Folge hat, dass auch die
 Phasengeschwindigkeit $v_\text{ph}$ in der LC-Kette von der Frequenz abhängen
 muss.
@@ -256,8 +258,8 @@ Sie lautet
 \end{equation}
 Die einzelnen Fourierkomponenten der Welle haben wie bereits erwähnt
 unterschiedliche Phasengeschwindigkeiten, weshalb die Wellengruppe sich in Zeit
-und Raum ausdehnt. Die Ausdehnungsgeschwindigkeit des Wellengruppenmaximums
-bezeichnet man als Gruppengeschwindigkeit.
+und Raum ausdehnt. Die erwähnte Gruppengeschwindigkeit ist die
+Ausdehnungsgeschwindigkeit des Wellengruppenmaximums.
 Durch Überlagerung zweier Wellen mit ähnlichen Frequenzen können Wellengruppen
 erzeugt werden. Diese Überlagerung nennt man Schwebung. Sie ist in Abbildung
 \ref{fig:Schweb} dargestellt.
@@ -305,15 +307,18 @@ Die Gruppengeschwindigkeit beträgt nun
 \end{equation}
 Für kleine Frequenzen $\omega \to 0$ nähern sich sowohl die Phasen- als auch
 die Gruppengeschwindigkeit dem Wert $\sqrt{\frac{1}{LC}}$ an.
+Für Frequenzen $\omega > \frac{2}{\sqrt{LC}}$  ist die
+Gruppengeschwindigkeit
 
+\begin{equation}
+  v_\text{gr} = 0.
+\end{equation}
 
 \subsection{Der Wellenwiderstand einer unendlichen LC-Kette}
 
 Der Eingangswiderstand, oder auch Wellenwiderstand $Z$ ist der Widerstand, der
-bei einer theoretischen unendlichen Kette existiert, da die Welle durch die
-offenen Enden nicht reflektiert wird und die Energie sonst theoretisch
-verloren gehen würde.
-Der Widerstand ist der Quotient aus der Eingangsspannung und dem Eingangsstrom.
+bei einer theoretischen unendlichen Kette existiert.
+Er ist der Quotient aus der Eingangsspannung und dem Eingangsstrom.
 Nach Abbildung \ref{fig:WW} kann mit Hilfe der Kirchhoffschen Gesetze die
 Gleichung
 
