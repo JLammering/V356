@@ -3,8 +3,6 @@
 
 \subsection{Durchlasskurve}
 
-\subsubsection{Berechnung}
-
 \begin{table}
   \centering
   \caption{Tabelle mit den gegebenen Werten.}
@@ -26,58 +24,67 @@ wird folgend $\nu_1$ genannt und ist die erste Grenzfrequenz.
 Zur Berechnung wird die Formel \eqref{eqn:nu1} genutzt.
 
 \begin{equation}
-  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_1}}
+  \nu_1 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_1}} = \SI{45622}{\hertz}
   \label{eqn:nu1}
 \end{equation}
-In diesem Fall ergibt dies $\nu_1 = \SI{45622}{\hertz}$.
 
 Ab $\nu_1$ existiert ein Frequenzbereich in dem kaum Spannung durchgelassen wird.
 Der geht bis $\nu_2$ der zweiten Grenzfrequenz. Die Formel lautet :
 
 \begin{equation}
-  \nu_2 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_2}}.
+  \nu_2 = \frac{1}{2\cdot\pi}\sqrt{\frac{2}{L \cdot C_2}} = \SI{64519}{\hertz}.
 \end{equation}
-Das Ergebnis ist $\nu_2 = \SI{64519}{\hertz}$.
 
 Bis $\nu_3$, der dritten Grenzfrequenz, ist ein Bereich, in dem wieder Spannung
 durchgelassen wird. Und ab da wird endgültig keine Spannung durchgelassen. Die
 benutzte Formel lautet:
 
 \begin{equation}
-  \nu_3 = \frac{1}{2\cdot\pi}\sqrt{\frac{2 \cdot (C_1+C_2)}{L \cdot C_1 \cdot C_2}}.
+  \nu_3 = \frac{1}{2\cdot\pi}\sqrt{\frac{2 \cdot (C_1+C_2)}{L \cdot C_1 \cdot C_2}}
+  = \SI{79020}{\hertz}.
 \end{equation}
-Das Ergebnis ist $\nu_3 = \SI{79020}{\hertz}$.
-
-\subsubsection{Aufgenommene Messkurve}
 
 \begin{figure*}[p]
   \centering
-  \makebox[\textwidth]{\includegraphics[width=.9\paperwidth]{plota.pdf}}
-  \caption{Aufgenommene Messkurve.}
+  \makebox[\textwidth]{\includegraphics[width=.7\paperwidth]{plota.pdf}}
+  \caption{Aufgenommene Durchlasskurve.}
   \label{fig:plota}
 \end{figure*}
 
 In Abbildung \ref{fig:plota} ist die Durchlasskurve der $LC_1C_2$-Kette zu
 sehen. Auf der Abzisse ist die Frequenz $\nu$ in $\si{\hertz}$ aufgetragen. Die
-Ordinate bildet die Spannung $U$ in $\si{\volt}$ ab. Die Skalierung der x-Achse
+Ordinate bildet die Spannung $U$ in willkürlichen Einheiten ab. Die Skalierung der x-Achse
  ist logarithmisch. Durch eine lineare
-Regression mit Hilfe der Funktion $linregress$ aus $numpy$ \cite{numpy} wird
-eine Formel bestimmt, die Entfernungen auf dem Papier in die entsprechende
+Regression mit Hilfe der Funktion $linregress$ aus $scipy$ \cite{scipy} in
+$python$
+wird eine Formel bestimmt, die Entfernungen auf dem Papier in die entsprechende
 Frequenz umrechnet.
 
 Berechnet wurde so die Formel:
 
 \begin{equation}
-  \nu = \exp(\SI{0,0644}{\hertz\per\centi\meter} \cdot x + \SI{10,0400}{\hertz}).
+  \nu = \exp(0,0644~ln(\frac{Hz}{cm})\cdot x + 10,0400~ln(Hz)).
 \end{equation}
 
-Nun können die die Grenzfrequenzen abgelesen werden. Demnach ist bei $\SI{11,5}{\centi\meter}$
-$\nu_1 = \SI{48079}{\hertz}$, bei $\SI{16,1}{\centi\meter}$ $\nu_2 = \SI{64656}{\hertz}$ und
-bei $\SI{19,2}{\centi\meter}$ $\nu_3 = \SI{78943}{\hertz}$.
+Nun können die die Grenzfrequenzen abgelesen werden. Also ist:
+
+\begin{align*}
+  \text{bei}~\SI{11,5}{\centi\meter}:~\nu_1 &= \SI{48079}{\hertz}\\
+  \text{bei}~\SI{16,1}{\centi\meter}:~\nu_2 &= \SI{64656}{\hertz}\\
+  \text{bei}~\SI{19,2}{\centi\meter}:~\nu_3 &= \SI{78943}{\hertz}.
+\end{align*}
+
+Die prozentualen Abweichungen der abgelesenen Werte von den errechneten
+Theoriewerten betragen dann:
+
+\begin{align*}
+  \text{für}~\nu_1:~\frac{|\nu_{1,\text{theo.}}-\nu_{1,\text{abgel.}}|}{\nu_{1,\text{theo.}}}&= \SI{5,4}{\percent}\\
+  \text{für}~\nu_2:~\frac{|\nu_{2,\text{theo.}}-\nu_{2,\text{abgel.}}|}{\nu_{2,\text{theo.}}}&= \SI{0,2}{\percent}\\
+  \text{für}~\nu_3:~\frac{|\nu_{3,\text{theo.}}-\nu_{3,\text{abgel.}}|}{\nu_{3,\text{theo.}}}&= \SI{0,1}{\percent}.
+\end{align*}
 
 \subsection{Dispersionskurve}
 
-\subsubsection{Messwerte}
 
 \begin{table}
   \centering
@@ -85,7 +92,7 @@ bei $\SI{19,2}{\centi\meter}$ $\nu_3 = \SI{78943}{\hertz}$.
   \label{tab:wertedis}
   \begin{tabular}{c c}
     \toprule
-     $\nu \ /\ \si{\hertz}$ & Phasenverschiebung\\
+     $\nu \ /\ \si{\hertz}$ & $\text{Phasenverschiebung}~\theta \ /\ \pi$\\
     \midrule
     4 & 0\\
     4360 & 1\\
@@ -109,8 +116,6 @@ In Tabelle \ref{tab:wertedis} sind die gemessenen Werte zur Bestimmung der
 Dispersionskurven abgebildet. Hier wurde anders als bei der Kopie der
 Originaldaten angenommen, dass zwischen dem elften und zwölften Messwert,
 sowie dem zwölften und dreizehnten Wert ein Wert fehlt.
-
-\subsubsection{Grafiken}
 
 \begin{figure}
   \centering
@@ -141,44 +146,48 @@ In Abbildung \ref{fig:astw2} sind drei Theoriekurven eingezeichnet. Die Achsen
 sind ebenso belegt, wie bei Abbildung \ref{fig:astw1}.
 $\omega_2$ wird nach Gleichung \eqref{eqn:Omega} mit positivem Vorzeichen
 gezeichnet. Die beiden anderen Kurven sind spezielle Werte von $\omega_2$,
-nämlich die Grenzfrequenzen $\nu_2$ und $\nu_3$; slebsterklärend umgerechnet
+nämlich die Grenzfrequenzen $\nu_2$ und $\nu_3$; selbsterklärend umgerechnet
 wie oben beschrieben.
+
+\FloatBarrier
 
 \subsection{Eigenfrequenzen}
 Es wird die Phasengeschwindigkeit $v_{\text{Ph}}$ in Abhängigkeit der Frequenz
 $\nu$ bestimmt.
 
-\subsubsection{Messwerte}
-
 \begin{table}[h]
   \centering
-  \caption{Eigenfrequenzen $nu_i$.}
+  \caption{Eigenfrequenzen $\nu_i$ und dazugehörige Phasengeschwindigkeiten $v_\text{Ph,i}$.}
   \label{tab:nui}
-  \begin{tabular}{c c}
+  \begin{tabular}{S S S}
     \toprule
-     $\nu_i \:/\: \si{\hertz}$ & Eigenfrequenz i\\
+     {$\nu_i \:/\: \si{\hertz}$} & {$\text{Eigenfrequenz i}$} & {$v_{\text{Ph,i}} \:/\:\si{\kilo\meter\per\second}$}\\
     \midrule
-    5040 & 1\\
-    9990 & 2\\
-    14870 & 3\\
-    19630 & 4\\
-    24180 & 5\\
-    28380 & 6\\
-    32390 & 7\\
-    36290 & 8\\
-    39600 & 9\\
-    42600 & 10\\
-    45100 & 11\\
-    47300 & 12\\
-    48600 & 13\\
-    50600 & 14\\
+    5040 & 1 & 161\\
+    9990 & 2 & 160\\
+    14870 & 3 & 159\\
+    19630 & 4 & 157\\
+    24180 & 5 & 155\\
+    28380 & 6 & 151\\
+    32390 & 7 & 148\\
+    36290 & 8 & 145\\
+    39600 & 9 & 141\\
+    42600 & 10 & 136\\
+    45100 & 11 & 131\\
+    47300 & 12 & 126\\
+    48600 & 13 & 120\\
+    50600 & 14 & 116\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-In Tabelle \ref{tab:nui} sind die Eigenfrequenzen eingetragen.
+In Tabelle \ref{tab:nui} sind die Eigenfrequenzen eingetragen. Die Phasengeschwindigkeit
+wird mit der Formel \eqref{eqn:vph1} bestimmt.
 
-\subsubsection{Grafik}
+\begin{equation}
+  v_{\text{Ph}} = \frac{\nu_{\text{i}}}{(i/32)}
+  \label{eqn:vph1}
+\end{equation}
 
 \begin{figure}[h]
   \centering
@@ -187,16 +196,18 @@ In Tabelle \ref{tab:nui} sind die Eigenfrequenzen eingetragen.
   \label{fig:vph}
 \end{figure}
 
-In Abbildung \ref{fig:vph} ist die Phasengeschwindigkeit $v_{text{Ph}}$ in
-Abhängigkeit von der Frequenz
-$\nu$ aufgetragen.
+In Abbildung \ref{fig:vph} ist die Phasengeschwindigkeit $v_{\text{Ph}}$ in
+Abhängigkeit von der Frequenz $\nu$ aufgetragen nach Formel \eqref{eqn:vphtheo}.
+ Zu erkennen sind die berechneten
+Phasengeschwindigkeiten nach Formel \eqref{eqn:vph1}. Bei dieser Formel steht im
+Zähler $\nu$ und nicht $\omega$, wie in Formel \eqref{eqn:vph}.
 
+Außerdem ist dort der Grenzwert $\frac{1}{LC}$ eingezeichnet.
 \subsection{Stehende Wellen}
 
 Nun wird das Verhalten reflektierter Wellen in der Kettenschaltung
 untersucht.
 
-\subsubsection{Messergebnisse}
 
 \begin{table}[h]
     \begin{minipage}{.45\linewidth}
@@ -258,8 +269,8 @@ untersucht.
 \end{table}
 
 Die Werte aus Tabelle \ref{tab:erstesmax} und aus Tabelle \ref{tab:zweitesmax}
-wurden mit der gleichen Schaltung, aber bei unterschiedlichen Frequenzen bestimmt.
-Nämlich der ersten und zweiten Eigenschwingung.
+wurden mit der gleichen Schaltung, aber bei unterschiedlichen Frequenzen bestimmt,
+nämlich der ersten und zweiten Eigenschwingung.
 
 
 \begin{table}[h]
@@ -294,8 +305,6 @@ Nämlich der ersten und zweiten Eigenschwingung.
 Zur Aufnahme der Werte aus Tabelle \ref{tab:absw=wellw} wird die Kette mit dem
 Wellenwiderstand $Z = \SI{282}{\ohm}$ abgeschlossen.
 
-\subsubsection{Grafiken}
-
 \begin{figure}[h]
   \centering
   \includegraphics[width = \textwidth]{build/plotd_1.pdf}
@@ -310,8 +319,16 @@ Wellenwiderstand $Z = \SI{282}{\ohm}$ abgeschlossen.
   \label{fig:zweitesmax}
 \end{figure}
 
-In den Abbildungen \ref{fig:erstesmax} und \ref{fig:zweitesmax} sind die Messpunkte
-aus den Tabellen \ref{tab:erstesmax} und \ref{tab:zweitesmax} aufgetragen.
+In Abbildung \ref{fig:erstesmax} sind die Messpunkte aus Tabelle \ref{tab:erstesmax}
+aufgetragen. Am Kettenende ist, da bei Eigenfrequenzen gemessen  wurde,
+ wie erwartet ein Spannungsbauch. Auch der Spannungsknoten ist genau in der Mitte der Kette, wie schon
+ in  Abbildung \ref{fig:BauchKnot} zu sehen.
+
+ In Abbildung \ref{fig:zweitesmax} sind die Messpunkte
+aus Tabelle \ref{tab:zweitesmax} aufgetragen. Die Spannungsbäuche sind an dem
+Kettenende beziehungsweise am Anfang. Da die Frequenz circa doppelt so groß ist,
+wie in Abbildung \ref{fig:erstesmax}, ist die Wellenlänge nur halb so lang und
+man sieht ein Minima und ein Maxima mehr.
 
 \begin{figure}[h]
   \centering
@@ -321,4 +338,6 @@ aus den Tabellen \ref{tab:erstesmax} und \ref{tab:zweitesmax} aufgetragen.
 \end{figure}
 
 In Abbildung \ref{fig:absw=wellw} sind die Messpunkte bei abgeschlossener Kette
-eingetragen.
+eingetragen. Zu erkennen ist, dass die y-Skala nur, im Vergleich zu den vorherigen
+Messpunkten, die ohne Abschlusswiderstand aufgenommen wurden, relativ geringe Differenzen bei
+den Messwerten anzeigt. Die Spannungsbäuche sind erneut am Anfang und am Ende der Kette.

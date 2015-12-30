@@ -6,6 +6,7 @@ x, y = np.genfromtxt('d_2.txt', unpack = True)
 plt.plot(x, y, 'rx', label = 'Messpunkte')
 plt.xlabel(r'Kettenglied')
 plt.ylabel(r'$U \:/\: \si{\volt}$')
+plt.xlim(-0.5,16.5)
 plt.legend(loc = 'best')
 #plt.title(r'gemessen beim zweiten Maximum f = \SI{9990}{\hertz}')
 

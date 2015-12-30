@@ -9,7 +9,7 @@ import numpy as np
 # Messwerte:
 y, x = np.genfromtxt('b1.txt', unpack = True)
 x = np.pi*x/32
-y = 2*np.pi*y
+y = (2*np.pi*y)/1000
 plt.plot(x, y, 'k.', label = r'$Messwerte$')
 
 # Werte:
@@ -19,20 +19,20 @@ L = 1.217 * 10**(-3)
 
 # Dispersionskurve:
 t = np.linspace(0, np.pi/2, 1000)
-plt.plot(t, np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) +
-(1/C2))**2 - (4*(np.sin(t))**2)/(C1*C2))), 'r', label = r'$\omega_1$')
+plt.plot(t, (np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) +
+(1/C2))**2 - (4*(np.sin(t))**2)/(C1*C2))))/1000, 'r', label = r'$\omega_1$')
 
 # Grenzfrequenz:
-m = np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) + (1/C2))**2 -
-(4*(np.sin(np.pi/2))**2)/(C1*C2)))
+m = (np.sqrt((1/L)*((1/C1) + (1/C2)) - (1/L)*np.sqrt(((1/C1) + (1/C2))**2 -
+(4*(np.sin(np.pi/2))**2)/(C1*C2))))/1000
 a = np.linspace(0, np.pi, 1000)
 plt.plot(a, 0*a + m,'k', label = r'$\omega_1(\frac{\pi}{2})$')
 
 plt.legend(loc = 'best')
-plt.ylim(0, 400000)
+plt.ylim(0, 400)
 plt.xlim(0, np.pi/2, 1000)
 plt.xlabel(r'$\theta$')
-plt.ylabel(r'$\omega \:/\: \si{\hertz}$')
+plt.ylabel(r'$\omega \:/\: \si{\kilo\hertz}$')
 plt.grid()
 
 print(m, np.sqrt(2/(L*C1)))
