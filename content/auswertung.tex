@@ -63,7 +63,7 @@ Frequenz umrechnet.
 Berechnet wurde so die Formel:
 
 \begin{equation}
-  \nu = \exp(0,0644~ln(\frac{Hz}{cm})\cdot x + 10,0400~ln(Hz)).
+  \nu = \exp(0,0644~\frac{ln(Hz)}{cm}\cdot x + 10,0400~ln(Hz)).
 \end{equation}
 
 Nun können die die Grenzfrequenzen abgelesen werden. Also ist:
@@ -161,7 +161,7 @@ $\nu$ bestimmt.
   \label{tab:nui}
   \begin{tabular}{S S S}
     \toprule
-     {$\nu_i \:/\: \si{\hertz}$} & {$\text{Eigenfrequenz i}$} & {$v_{\text{Ph,i}} \:/\:\si{\kilo\meter\per\second}$}\\
+     {$\nu_i \:/\: \si{\hertz}$} & {$\text{Eigenfrequenz i}$} & {$v_{\text{Ph,i}} \:/\:\text{Kettenglieder  }\si{\per\second}$}\\
     \midrule
     5040 & 1 & 161\\
     9990 & 2 & 160\\
@@ -196,6 +196,8 @@ wird mit der Formel \eqref{eqn:vph1} bestimmt.
   \label{fig:vph}
 \end{figure}
 
+Die in der Formel enthaltene $32$ berücksichtigt die Anzahl an Kettengliedern, da
+sie durch $2\cdot 16=32$ bestimmt wird.
 In Abbildung \ref{fig:vph} ist die Phasengeschwindigkeit $v_{\text{Ph}}$ in
 Abhängigkeit von der Frequenz $\nu$ aufgetragen nach Formel \eqref{eqn:vphtheo}.
  Zu erkennen sind die berechneten
@@ -279,7 +281,7 @@ nämlich der ersten und zweiten Eigenschwingung.
   \label{tab:absw=wellw}
   \begin{tabular}{c c}
     \toprule
-     Kettenglied & $U \:/\: \si{\volt}$\\
+     Kettenglied & $U \:/\: \si{\milli\volt}$\\
     \midrule
     0 & 66\\
     1 & 66\\
@@ -328,7 +330,7 @@ aufgetragen. Am Kettenende ist, da bei Eigenfrequenzen gemessen  wurde,
 aus Tabelle \ref{tab:zweitesmax} aufgetragen. Die Spannungsbäuche sind an dem
 Kettenende beziehungsweise am Anfang. Da die Frequenz circa doppelt so groß ist,
 wie in Abbildung \ref{fig:erstesmax}, ist die Wellenlänge nur halb so lang und
-man sieht ein Minima und ein Maxima mehr.
+man sieht ein Minimum und ein Maximum mehr.
 
 \begin{figure}[h]
   \centering

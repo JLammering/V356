@@ -23,7 +23,7 @@ plt.plot(x/1000, (0*x + 1/np.sqrt(L*C))/1000, label = r'$Grenzwert$')
 
 plt.xlim(0, 320)
 plt.xlabel(r'$\omega \:/\: \si{\kilo\hertz}$')
-plt.ylabel(r'$v_{\text{Ph}} \:/\: \si{\kilo\meter\per\second}$')
+plt.ylabel(r'$v_{\text{Ph}} \:/\: \text{Kettenglieder  }\si{\per\second}$')
 plt.legend(loc = 'best')
 
 plt.savefig('build/plotvph.pdf')
